@@ -28,16 +28,14 @@ public class Main {
     }
 
     public static int deliveryTimeCalculation (int distance) {
-        int deliveryTimeInDays = 0;
-        if (distance > 0) {
-            deliveryTimeInDays++;
-            if (distance > 20 ) {
-                deliveryTimeInDays++;
-                if (distance > 60) {
-                    deliveryTimeInDays++;
-                }
+        int deliveryTimeInDays = 1;
+        int addingDays;
+        int minDeliveryDistance = 20;
+        if (distance > minDeliveryDistance) {
+            addingDays = (distance - minDeliveryDistance) / 40 + 1;
+            deliveryTimeInDays = deliveryTimeInDays + addingDays;
             }
-        }
+
         return deliveryTimeInDays;
     }
 
